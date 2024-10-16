@@ -6,8 +6,15 @@
     <title>Salah Time</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            min-height: 97vh;
+            min-height: 100vh;
+            padding: 50px;
             width: auto;
             background-image: linear-gradient(to bottom left, #1AA96E, #00341F);
             background-size: cover;
@@ -15,15 +22,27 @@
         }
 
         div {
+            margin-top: 50px;
             display: flex;
+            flex-flow: row wrap;
             justify-content: center;
             align-items: center;
+            gap: 5rem;
         }
 
         img {
-            max-height: 85vh;
+            max-height: 400px;
             max-width: 100%;
             margin-left: -75px;
+        }
+
+        img, iframe {
+            display: block;
+        }
+
+        iframe {
+            width: 230px;
+            height: 349.5px;
         }
     </style>
 </head>
@@ -31,6 +50,8 @@
     <h1 align="center">website coming soon...</h1>
     <div>
         <img src="images/test.png">
+        <iframe src="app/" frameborder="0" scrolling="no"></iframe>
     </div>
+    
 </body>
 </html>
