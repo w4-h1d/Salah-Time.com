@@ -53,8 +53,8 @@ a {
 }
 
 section {  
-    /* width: clamp(230px, calc(230px * var(--scale)), 100%);  *//* For Website App*/
-    width: calc(230px * var(--scale)); /* For Extension */
+    width: clamp(230px, calc(230px * var(--scale)), 100%); /* For Website App*/
+    /* width: calc(230px * var(--scale)); */ /* For Extension */
     border-radius: 0;
     background-color: var(--accent-1);
     padding: calc(5px * var(--scale)) calc(15px * var(--scale)) calc(5px * var(--scale));
