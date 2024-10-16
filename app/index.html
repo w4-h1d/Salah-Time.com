@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salah Time</title>
+    <script defer src="main.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" id="theme">
+</head>
+<body>
+    <section class="">
+        <div class="settings-icon-div">
+            <button class="settings-button filter-black" id="settings-btn"><img src="images/settings-icon.svg" alt="settings icon" width="16" height="16"></button>
+        </div>
+        <div class="theme-icon-div">
+            <button class="settings-button filter-black" id="theme-btn"><img src="images/theme-icon.svg" alt="theme icon" width="16" height="16"></button>
+        </div>
+
+        <div class="setting">
+            <div class="setting-blur">
+                <p id="errorMessage"></p>
+                <audio id="audio-alert">
+                    <source src="azan.mp3" type="audio/mpeg">
+                </audio>
+                
+                <p>Current Location:</p>
+                <address id="currentLocation"></address>
+
+                <div class="full-width"></div>
+
+                <form id="geocodeForm">
+                    <button class="" id="location-btn"><img src="images/location.svg" alt="settings icon" width="16" height="16"></button>
+                    <label for="address">Set your Location:</label>
+                    <input type="text" id="address" placeholder="Location Address">
+                    <div id="suggestions"></div>
+                    <button type="submit">Set Location</button>
+                </form>
+
+                <div class="full-width"></div>
+
+                <form>
+                    <label for="zoom">Zoom:</label>
+                    <select id="zoom">
+                        <option disabled selected>Scale</option>
+                        <option value="1">100%</option>
+                        <option value="1.25">125%</option>
+                        <option value="1.5">150%</option>
+                        <option value="1.75">175%</option>
+                        <option value="2">200%</option>
+                        <option value="2.5">250%</option>
+                        <option value="3">300%</option>
+                        <option value="3.5">350%</option>
+                        <option value="4">400%</option>
+                    </select>
+                    <button id="setZoom">Set</button>
+                </form>
+
+                <div class="full-width"></div>
+
+                <form class="method">
+                    <label for="method" class="methodLabel">Set Calculation Method: </label>
+                    <select id="method">
+                        <option disabled selected>Method</option>
+                        <option value="0">Jafari / Shia Ithna-Ashari</option>
+                        <option value="1">University of Islamic Sciences, Karachi</option>
+                        <option value="2">Islamic Society of North America</option>
+                        <option value="3">Muslim World League</option>
+                        <option value="4">Umm Al-Qura University, Makkah</option>
+                        <option value="5">Egyptian General Authority of Survey</option>
+                        <option value="7">Institute of Geophysics, University of Tehran</option>
+                        <option value="8">Gulf Region</option>
+                        <option value="9">Kuwait</option>
+                        <option value="10">Qatar</option>
+                        <option value="11">Majlis Ugama Islam Singapura, Singapore</option>
+                        <option value="12">Union Organization islamic de France</option>
+                        <option value="13">Diyanet İşleri Başkanlığı, Turkey</option>
+                        <option value="14">Spiritual Administration of Muslims of Russia</option>
+                        <option value="16">Dubai (experimental)</option>
+                        <option value="17">Jabatan Kemajuan Islam Malaysia (JAKIM)</option>
+                        <option value="18">Tunisia</option>
+                        <option value="19">Algeria</option>
+                        <option value="20">KEMENAG - Kementerian Agama Republik Indonesia</option>
+                        <option value="21">Morocco</option>
+                        <option value="22">Comunidade Islamica de Lisboa</option>
+                        <option value="23">Ministry of Awqaf, Islamic Affairs and Holy Places, Jordan</option>
+                        
+                    </select>
+                    <button id="setMethod">Set</button>
+                </form>
+            </div>
+
+            <button class="tune"><img src="images/tune-icon.svg" alt="tune icon" width="16" height="16">Set Timing Offsets</button>
+
+            <form class="tuneForm">
+                <p>Tune Salah Time</p>
+                <label for="tuneFajr">Fajr: </label>
+                <input type="number" id="tuneFajr" name="tuneFajr" class="tuneInput" placeholder="Offset (Min)">
+
+                <label for="tuneSunrise">Sunrise: </label>
+                <input type="number" id="tuneSunrise" name="tuneSunrise" class="tuneInput" placeholder="Offset (Min)">
+
+                <label for="tuneDhuhr">Dhuhr: </label>
+                <input type="number" id="tuneDhuhr" name="tuneDhuhr" class="tuneInput" placeholder="Offset (Min)">
+
+                <label for="tuneAsr">Asr: </label>
+                <input type="number" id="tuneAsr" name="tuneAsr" class="tuneInput" placeholder="Offset (Min)">
+
+                <label for="tuneMaghrib">Maghrib: </label>
+                <input type="number" id="tuneMaghrib" name="tuneMaghrib" class="tuneInput" placeholder="Offset (Min)">
+
+                <label for="tuneIsha">Isha: </label>
+                <input type="number" id="tuneIsha" name="tuneIsha" class="tuneInput" placeholder="Offset (Min)">
+                <button id="tuneButton" class="">Tune</button> 
+            </form>    
+
+
+            <p class="margin" id="audioCredit"><a href="https://www.youtube.com/watch?v=FliFWDRzaxM" target="_blank" id="azanLink">Audio SFX Used</a></p>
+        </div>
+
+        <div class="" id="widget">
+            <div>
+                <div class="title">
+                    <img src="images/mosquelogo.svg" class="logo filter-black" height="50" alt="LOGO">
+                    <div>
+                        <h1 class="nowrap">Salah Time</h1>
+                        <h2 class="small">Developed By Wahid</h2>
+                    </div>
+                    
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td class="table_reminder boder_left" id="remaining">Time</td>
+                            <td class="table__time table_reminder boder_right nowrap" id="count">+/- --:--:--</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="no-margin-padding"><div class="line"></div></td>
+                            <td class="no-margin-padding"><div class="line"></div></td>
+                        </tr>
+                        <tr>
+                            <td>Fajr</td>
+                            <td class="table__time" id="fajr"><time id="Fajr">--:-- AM</time></td>
+                        </tr>
+                        <tr>
+                            <td>Sunrise</td>
+                            <td class="table__time"><time id="Sunrise">--:-- AM</time></td>
+                        </tr>
+                        <tr>
+                            <td>Dhuhr</td>
+                            <td class="table__time"><time id="Dhuhr">--:-- AM</time></td>
+                        </tr>
+                        <tr>
+                            <td>Asr</td>
+                            <td class="table__time"><time id="Asr">--:-- AM</time></td>
+                        </tr>
+                        <tr>
+                            <td>Maghrib</td>
+                            <td class="table__time"><time id="Maghrib">--:-- AM</time></td>
+                        </tr>
+                        <tr>
+                            <td>Isha</td>
+                            <td class="table__time"><time id="Isha">--:-- AM</time></td>
+                        </tr>
+                        <tr>
+                            <td class="no-margin-padding"><div class="line"></div></td>
+                            <td class="no-margin-padding"><div class="line"></div></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><td class="table__footer"><time id="hijri">Hijri Date</time></td></tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

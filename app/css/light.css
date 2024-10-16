@@ -1,0 +1,30 @@
+:root {
+    --background: #000;
+    --table-border-radius: 5px;
+    --font-color: #202020;
+    --accent-1: #c5c5c5;
+    --accent-2: #969696;
+    --accent-3: #202020;
+    --reminder-text: var(--accent-1);
+    --reminder-color: var(--font-color);
+    --error-red: #6E0000;
+    --error-green: #004400;
+}
+
+.filter-black{
+    filter: invert(87.45%);
+}
+
+.settings-button:hover {
+    filter: invert(95.45%);
+    transition: all 0.3s;
+}
+
+.settings-button:active {
+    filter: invert(75%);
+    transition: all 0.3s;
+}
+
+.tune img {
+    filter: invert(88.63%);
+}

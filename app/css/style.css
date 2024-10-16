@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #000;
+    --table-border-radius: 5px;
+    --font-color: #fff;
+    --accent-1: #1d1d1d;
+    --accent-2: #1e1e1e;
+    --accent-3: #bdbdbd;
+    --reminder-text: #1e1e1e;
+    --reminder-color: rgb(165, 165, 165);
+    --error-red: #FC6161;
+    --error-green: #68FF68;
+    --blur: blur(5px);
+
+    /*Size*/
+    --scale: 1;
+}
+
+.nowrap {
+    text-wrap: nowrap;
+}
+
+html {
+    font-family: "Roboto", Arial, sans-serif;
+    font-weight: 700;
+    background-color: var(--background);
+    color: var(--font-color);
+    font-size: calc(1rem * var(--scale));
+}
+
+button img {
+    width: calc(16px * var(--scale));
+    height: calc(16px * var(--scale));
+}
+
+.logo {
+    height: calc(50px * var(--scale));
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+a {
+    color: var(--font-color);
+}
+
+section {  
+    /* width: clamp(230px, calc(230px * var(--scale)), 100%);  *//* For Website App*/
+    width: calc(230px * var(--scale)); /* For Extension */
+    border-radius: 0;
+    background-color: var(--accent-1);
+    padding: calc(5px * var(--scale)) calc(15px * var(--scale)) calc(5px * var(--scale));
+    position: relative;
+    transition: all 0.2s;
+    overflow: hidden;
+
+    height: auto;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: calc(10px * var(--scale)) 0;
+}
+
+section h1 {
+    text-align: center;
+    margin-left: calc(5px * var(--scale));
+}
+
+table {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: calc(5px * var(--scale));
+    justify-content: center;
+    align-content: center;
+}
+
+thead, tbody, tfoot, tr {
+    display: contents;
+}
+
+td {
+    padding: calc(2.5px * var(--scale)) calc(5px * var(--scale));
+    margin: calc(2.5px * var(--scale)) 0;
+    font-size: 1rem;
+}
+
+.table__time {
+    text-align: right;
+}
+
+.table__footer {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    grid-column: 1 / span 2;
+    margin-top: calc(5px * var(--scale));
+}
+
+.table_reminder {
+    font-weight: 900;
+    font-size: 1.1rem;
+    background-color: var(--reminder-color);
+    color: var(--reminder-text);
+    margin: 0 0 calc(10px * var(--scale));
+    padding: calc(5px * var(--scale));
+}
+
+.boder_left {
+    border-radius: var(--table-border-radius) 0 0 var(--table-border-radius);
+}
+
+.boder_right {
+    border-radius: 0 var(--table-border-radius) var(--table-border-radius) 0;
+}
+
+.line {
+    background-color: var(--font-color);
+    height: calc(2px * var(--scale));
+}
+
+.no-margin-padding {
+    margin: calc(3px * var(--scale)) 0;
+    padding: 0;
+}
+
+.setting {
+    max-width: clamp(230px, calc(230px * var(--scale)), 100%);
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-110%);
+    transition: all 0.2s, 0.75s ease-in-out transform;
+    background-color: var(--accent-1);
+    z-index: 1;
+    padding: calc(5px * var(--scale)) calc(15px * var(--scale)) calc(12.5px * var(--scale));
+    box-shadow: 0 calc(5px * var(--scale)) calc(5px * var(--scale)) var(--background);
+}
+
+.settings-icon-div {
+    position: absolute;
+    top: calc(8px * var(--scale));
+    left: calc(8px * var(--scale));
+    z-index: 2;
+}
+
+.theme-icon-div {
+    position: absolute;
+    top: calc(8px * var(--scale));
+    right: calc(8px * var(--scale));
+    z-index: 2;
+}
+
+.settings-button {
+    width: calc(16px * var(--scale));
+    height: calc(16px * var(--scale));
+    background-color: transparent;
+    border: 0;
+    box-shadow: 0;
+    border-radius: calc(10px * var(--scale));
+    filter: brightness(0.9);
+}
+
+.settings-button:hover {
+    cursor: pointer;
+    border-radius: calc(10px * var(--scale));
+    transform: scale(1.15);
+    filter: brightness(1);
+    transition: all 0.3s;
+}
+
+.settings-button:active {
+    transform: scale(0.85);
+    filter: brightness(0.8);
+    transition: all 0.3s;
+}
+
+
+#geocodeForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* margin: calc(20px * var(--scale)) 0; */
+}
+
+input, form, button, select {
+    font: inherit;
+    text-align: center;
+}
+
+input {
+    width: calc(100% - calc(15px * var(--scale)));
+    height: 1.5rem;
+    box-shadow: 0;
+    outline: 0;
+    border: 1px solid var(--background);
+}
+
+.tuneInput {
+    width: calc(50% - calc(15px * var(--scale)));
+}
+
+label {
+    font-weight: 600;
+}
+
+form button, select, .tune {
+    width: calc(100px * var(--scale));
+    border-radius: calc(5px * var(--scale));
+    font-weight: bold;
+}
+
+form button, .tune {
+    background-color: var(--font-color);
+    color: var(--accent-1);
+    cursor: pointer;
+}
+
+#setZoom {
+    width: calc(40px * var(--scale));
+}
+
+form button:active, .tune:active {
+    filter: brightness(90%);
+    transform: scale(90%);
+    transition: all 0.15s;
+    background-color: transparent;
+    color: var(--font-color);
+}
+
+
+#errorMessage {
+    width: calc(100% - calc(15px * var(--scale)));
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin: calc(5px * var(--scale)) auto calc(10px * var(--scale));
+}
+
+#currentLocation {
+    margin-top: calc(5px * var(--scale));
+    color: var(--error-green);
+    font-style: italic;
+    font-weight: 900;
+}
+
+.small {
+    font-size: 0.45rem;
+    text-align: right;
+    margin-right: calc(2.5px * var(--scale));
+    margin-top: calc(-2.5px * var(--scale));
+    font-weight: 800;
+}
+
+.darken-bg {
+    filter: var(--blur);
+    transition: all ease-in-out 0.3s;
+}
+
+#address { 
+    margin: calc(10px * var(--scale)) 0 calc(10px * var(--scale));
+    padding-inline: calc(5px * var(--scale)) calc(26px * var(--scale)); 
+}
+
+#suggestions {
+    width: calc(100% - calc(15px * var(--scale)));
+    position: absolute;
+    top: calc(11px * var(--scale) + 2.39rem);
+    margin: 0 auto calc(10px * var(--scale));
+    border: 1px solid var(--background);
+    border-top: 0;
+    max-height: calc(170px * var(--scale));
+    overflow: auto;
+    z-index: 3;
+}
+
+#suggestions div {
+    padding: calc(5px * var(--scale)); 
+    cursor: pointer; 
+    background-color: var(--accent-3);
+    color: var(--accent-1);
+}
+
+#suggestions div:hover {
+    color: var(--accent-3);
+    background-color: var(--accent-2);
+    border: 1px solid var(--background);
+}
+
+.margin {
+    margin-top: 0.75em;
+}
+
+.full-width {
+    background-color: var(--font-color);
+    opacity: 0.1;
+    height: calc(2px * var(--scale));
+    width: calc(230px * var(--scale));
+    margin: calc(10px * var(--scale)) 0;
+    margin-left: calc(-15px * var(--scale));
+}
+
+.tuneForm {
+    display: grid;
+    max-width: clamp(230px, calc(230px * var(--scale)), 100%);
+    grid-template-columns: 1fr 1.5fr;
+    grid-gap: calc(7.5px * var(--scale));
+    justify-items: left;
+    align-items: center;
+    transform: translateY(-105%);
+    background-color: var(--accent-1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform ease-in-out 0.5s;
+    padding: calc(20px * var(--scale)) calc(20px * var(--scale)) calc(10px * var(--scale));
+    box-shadow: 0 calc(5px * var(--scale)) calc(5px * var(--scale)) var(--background);
+}
+
+.tuneForm p {
+    font-weight: 900; 
+}
+
+.tuneForm input {
+    width: 100%;
+    border-radius: calc(5px * var(--scale));
+}
+
+#tuneButton, .tuneForm p {
+    grid-column: 1 / span 2;
+    justify-self: center;
+}
+
+.method {
+    margin: calc(10px * var(--scale)) calc(10px * var(--scale)) calc(20px * var(--scale));
+    display: grid;
+    grid-gap: calc(5px * var(--scale));
+    grid-template-columns: 2fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+.methodLabel {
+    font-weight: 900;
+    grid-column: 1 / span 2;
+}
+
+#setMethod, #method {
+    width: 100%;
+}
+
+.settings-open {
+    transform: translateY(0);
+}
+
+.tune {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 10px;
+    width: calc(165px * var(--scale));
+    padding: calc(2.5px * var(--scale));
+    z-index: 2;
+}
+
+.tune-open {
+    transform: translateY(0);
+}
+
+#location-btn {
+    width: calc(16px * var(--scale));
+    height: calc(16px * var(--scale));
+    background-color: transparent;
+    border: 0;
+    box-shadow: 0;
+    border-radius: calc(10px * var(--scale));
+    position: absolute;
+    top: calc(29px * var(--scale));
+    right: calc(13.5px * var(--scale));
+    opacity: 0.9;
+}
+
+#location-btn:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+#location-btn:active {
+    transform: scale(0.85);
+    transition: all 0.3s;
+}
+
