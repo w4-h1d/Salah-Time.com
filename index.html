@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salah Time</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <script>
+        localStorage.setItem("scale", 1);
+
+        let iframe = document.getElementById("widgetIframe");
+        iframe.addEventListener("load", () => {
+            iframe.contentWindow.document.querySelector("#setZoom").setAttribute("disabled", "disabled");
+        })
+    </script>
     <style>
         * {
             margin: 0;
@@ -50,8 +58,7 @@
     <h1 align="center">website coming soon...</h1>
     <div>
         <img src="images/test.png">
-        <iframe src="app/" frameborder="0" scrolling="no"></iframe>
+        <iframe src="app/" frameborder="0" scrolling="no" id="widgetIframe" loading="eager"></iframe>
     </div>
-    
 </body>
 </html>
