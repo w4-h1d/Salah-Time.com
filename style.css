@@ -26,9 +26,11 @@ input, button, textarea {
     --font-color: #202020;
     --h1-color: #fff;
     --bg-color: #B7B7B7;
+    --link-color: #402020;
     --green-gradient: linear-gradient(45deg, #1AA96E, #00341F);
     --shadow-color: #202020aa;
     --card-bg: #D9D9D9;
+    --features-bg: #1d1d1d;
 }
 
 /* || UTILITY CLASSES */
@@ -46,6 +48,20 @@ input, button, textarea {
     align-items: center;
 }
 
+.nowrap {
+    text-wrap: nowrap;
+}
+
+.marker {
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: -4vh;
+}
+
+.relative {
+    position: relative;
+}
 
 /* || GENERAL STYLE */
 
@@ -63,8 +79,19 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--link-color);
+    font-style: italic;
 }
 
+a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+}
 
 /*////////////////////////////////////////////////////////////////////*/
 /*///////////////////////// NAVIGATION MENU //////////////////////////*/
@@ -97,6 +124,11 @@ a {
     color: var(--h1-color);
     font-weight: 500;
     font-size: 1.75rem;
+    font-style:normal
+}
+
+.menu__ul a:hover {
+    text-decoration: none;
 }
 
 .menu__btn {
@@ -185,11 +217,11 @@ a {
     align-items: center;
     justify-content: center;
     padding: 10vh 0.5em 5vh;
-    gap: 1em;
+    gap: 0.5em;
 }
 
 .h1 {
-    font-size: clamp(2.2rem, min(10vh, 8vw), 6rem);
+    font-size: clamp(2.1rem, min(10vh, 6vw), 6rem);
 }
 
 .h1__p {
@@ -207,6 +239,11 @@ a {
     text-align: center;
     border-radius: 6px;
     margin-top: 0.45em;
+    font-style: normal;
+}
+
+.downloadBtn:hover {
+    text-decoration: none;
 }
 
 .hero-text {
@@ -216,6 +253,7 @@ a {
     border-radius: 12px;
     box-shadow: -5px 5px 5px var(--shadow-color);
     font-weight: 400;
+    text-wrap: pretty;
 }
 
 .downloads {
@@ -225,18 +263,80 @@ a {
 
 /*///////////////////////////////////////////////////////////////////*/
 /*//////////////////////////// APP DEMO ////////////////////////////*/
+.demo__h2 {
+    /* font-size: clamp(3rem, min(10vh, 8vw), 8rem); */
+    font-size: min(10vh, 20vw);
+    text-wrap: pretty;
+    text-align: center;
+    line-height: 1.1;
+    margin: 5vh 0 3vh;
+}
 
+.demo__p {
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 2em 2em;
+}
 .widgetIframe {
     width: 230px;
     height: 349.5px;
     border: none;
-    box-shadow: 5px 5px 5px black;
+    box-shadow: -15px 15px 10px var(--shadow-color);
 }
 
 
 /*//////////////////////////// FEATURES ////////////////////////////*/
+.features-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--features-bg);
+    clip-path: polygon(0% 10%, 100% 2.5%, 100% 90%, 0% 100%);
+    z-index: -1;
+}
 
+.features {
+    margin-bottom: 1em;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: min(5vw, 45px);
+    margin: 1em 2em;
+    max-width: 700px;
+    border-radius: 12px;
+    box-shadow: -5px 5px 5px var(--shadow-color);
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-wrap: pretty;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.85em;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__img {
+    border-radius: 12px;
+    width: 70vw;
+    max-width: 600px;
+    box-shadow: 0 0 10px var(--shadow-color);
+
+}
 /*//////////////////////////// ALADHAN API ////////////////////////////*/
+.api {
+    gap: 1em;
+    font-weight: 500;
+    padding: 1em 2em 2em;
+}
+
+.api p {
+    font-size: 1.25rem;
+    text-wrap: pretty;
+}
 
 /*//////////////////////////// ABOUT ME ////////////////////////////*/
 .aboutMe {
@@ -246,6 +346,7 @@ a {
 .wave {
     width: 100%;
     max-height: 5vh;
+    outline: none;
 }
 
 .shape-fill {

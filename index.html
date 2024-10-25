@@ -8,7 +8,7 @@
     <meta name="author" content="Najmul Huda Wahid">
     <title>Salah Time</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <script defer>
+    <script>
         localStorage.setItem("scale", 1);
     </script>
     <link rel="stylesheet" href="style.css">
@@ -33,65 +33,63 @@
             <article class="title">
                 <img src="images/Salah-Time-Logo-300x300.png" alt="Salah Time logo" width="300" height="300" loading="eager" class="logo">
                 <div class="flex-center-column">
-                    <h1 class="h1">Salah Time</h1>
+                    <h1 class="h1 nowrap">Salah Time</h1>
                     <p class="h1__p">Developed By Wahid</p>
                     <a href="#downloads" class="downloadBtn">Download Now</a>
                 </div>
             </article>
             
             <article class="flex-center-column">
-                <img src="images/hero.png" alt="main" class="hero" width="1301" height="1086" loading="eager">
+                <img src="images/hero.webp" alt="main" class="hero" width="1301" height="1086" loading="eager">
 
-                <p class="hero-text" id="downloads">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method.<i>Salah Time does not collect any user data.</i></p>
+                <p class="hero-text">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method.<i>Salah Time does not collect any user data.</i></p>   
             </article>
-
-            <article class="flex-center-row downloads">
+            
+            <article class="flex-center-row downloads relative">
+                <div class="marker" id="downloads"></div>
                 <a href="https://chromewebstore.google.com/detail/salah-time/fdcdplphhahmakbgjefenejojakpcnnd" target="_blank"><img src="images/Install-on-Chrome.svg" alt="Install on Chrome"></a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/salah-time/" target="_blank"><img src="images/Install-on-Firefox.svg" alt="Install on Firefox"></a>
                 <a href="#" target="_blank"><img src="images/Install-on-Edge.svg" alt="Install on Edge"></a>
                 <a href="#" target="_blank"><img src="images/Install-on-Opera.svg" alt="Install on Opera"></a>
             </article>
+            
         </section>
-
-        <section id="demo">
+        
+        <section class="demo flex-center-column relative">
+            <div class="marker" id="demo"></div>
             <iframe src="app/" id="widgetIframe" class="widgetIframe" loading="lazy"></iframe>
-            <script>
-                const iframe = document.getElementById("widgetIframe");
-                
-                iframe.addEventListener("load", () => {
-                    iframe.contentWindow.document.querySelector("#setZoom").setAttribute("disabled", "disabled");
-                    console.log("loaded");
-                });
-            </script>
-            <h2>Try out the App!</h2>
-            <p>You can se the extension as a standalone web application in <a href="/app" target="_blank">www.salah-time.com/app</a></p>
+            <h2 class="demo__h2">Try out<br>the App!</h2>
+            <p class="demo__p">You can view the extension as a standalone web application in <a href="/app" target="_blank" class="nowrap">www.salah-time.com/app</a></p>
         </section>
 
-        <section id="features">
+        <section class="features relative flex-center-column">
+            <div class="marker" id="features"></div>
+            <div class="features-bg"></div>
             <h2>Features</h2>
 
             <article class="card">
-                <img src="images/theme.png" alt="App Theme Preview" width="600" height="566" loading="lazy">
+                <img src="images/theme.png" alt="App Theme Preview" width="600" height="566" loading="lazy" class="card__img">
                 <p>Light & Dark mode to suit user preferences</p>
             </article>
 
             <article class="card">
-                <img src="images/location.png" alt="Setting Location Preview" width="600" height="477" loading="lazy">
+                <img src="images/location.png" alt="Setting Location Preview" width="600" height="477" loading="lazy" class="card__img">
                 <p>Set / Change Location Automatically or Manually (Requires Internet Connection!)</p>
             </article>
 
             <article class="card">
-                <img src="images/tune.png" alt="Setting Timing Offsets Preview" width="600" height="886" loading="lazy">
+                <img src="images/tune.png" alt="Setting Timing Offsets Preview" width="600" height="886" loading="lazy" class="card__img">
                 <p>Tune / Offset prayer time in minutes</p>
             </article>
 
             <article class="card">
-                <img src="images/app-scale.png" alt="Setting App Scale Preview" width="600" height="451" loading="lazy">
+                <img src="images/app-scale.png" alt="Setting App Scale Preview" width="600" height="451" loading="lazy" class="card__img">
                 <p>Change Extension Scale / Zoom Level.</p>
             </article>     
         </section>
 
-        <section id="api">
+        <section class="relative flex-center-column api">
+            <div id="api" class="marker"></div>
             <h2>AlAdhan API</h2>
             <p>The App uses <a href="https://aladhan.com/prayer-times-api">AlAdhan API</a> to fetch the latest prayer timings based on latitude and longitude of the user and prayer time calculation method.</p>
             <p><a href="https://aladhan.com/calculation-methods">Learn more about prayer time calculation method.</a></p>
@@ -105,6 +103,7 @@
                 </svg>
             </div>
             <h2>About Me</h2>
+            <img src="images/najmul.jpg" alt="Najmul Huda Wahid" width="600" height="720">
             <p>Hi, I'm Wahid. I build cool websites and apps.</p>
             <p>Follow me on:</p>
             <div>
@@ -133,6 +132,13 @@
     </footer>
 
     <script>
+        const iframe = document.getElementById("widgetIframe");
+                
+        iframe.addEventListener("load", () => {
+            iframe.contentWindow.document.querySelector("#setZoom").setAttribute("disabled", "disabled");
+            console.log("loaded");
+        });
+        
         const toggleMenu = () => {
             document.querySelector("#menu").classList.toggle("showMenu");
             document.querySelector("#menuIcon").classList.toggle("menu__icon-x");
