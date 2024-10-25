@@ -3,65 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Salah, Salah Time, Salat, Salat Time, Muslim Prayer Time, Prayer, Pray, Prayer Time, Namaz, Namaz Time, Najmul Huda, Najmul, Najmul Huda Wahid">
+    <meta name="description" content="The Official Website of Salah Time Browser Extension">
+    <meta name="author" content="Najmul Huda Wahid">
     <title>Salah Time</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <script>
+    <script defer>
         localStorage.setItem("scale", 1);
     </script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            min-height: 100vh;
-            padding: 50px;
-            width: auto;
-            background-image: linear-gradient(to bottom left, #1AA96E, #00341F);
-            background-size: cover;
-            color: white;
-        }
-
-        div {
-            margin-top: 50px;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 5rem;
-        }
-
-        img {
-            max-height: 400px;
-            max-width: 100%;
-            margin-left: -75px;
-        }
-
-        img, iframe {
-            display: block;
-        }
-
-        iframe {
-            width: 230px;
-            height: 349.5px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1 align="center">website coming soon...</h1>
-    <div>
-        <img src="images/test.png">
-        <iframe src="app/" frameborder="0" scrolling="no" id="widgetIframe" loading="lazy"></iframe>
-        <script>
-            const iframe = document.getElementById("widgetIframe");
+    <header class="header">
+        <nav aria-label="primary navigation" class="menu flex-center-column" id="menu">
+            <ul class="menu__ul">
+                <li><a href="#demo">App Demo</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#api">ِAlAdhan API</a></li>
+                <li><a href="#aboutMe">About Me</a></li>
+                <li><a href="#getInTouch">Get in Touch</a></li>
+            </ul>
+        </nav>
+        <button class="flex-center-column menu__btn" id="menuBtn"><div class="menu__icon" id="menuIcon"></div></button>
+    </header>
+
+    <main class="main">
+        <div class="hero-bg"></div>
+        <section>
+            <article class="title">
+                <img src="images/Salah-Time-Logo-300x300.png" alt="Salah Time logo" width="300" height="300" loading="eager" class="logo">
+                <div class="flex-center-column">
+                    <h1 class="h1">Salah Time</h1>
+                    <p class="h1__p">Developed By Wahid</p>
+                    <a href="#downloads" class="downloadBtn">Download Now</a>
+                </div>
+            </article>
             
-            iframe.addEventListener("load", () => {
-                iframe.contentWindow.document.querySelector("#setZoom").setAttribute("disabled", "disabled");
-                console.log("loaded");
-            });
-        </script>
-    </div>
+            <article class="flex-center-column">
+                <img src="images/hero.png" alt="main" class="hero" width="1301" height="1086" loading="eager">
+
+                <p class="hero-text" id="downloads">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method.<i>Salah Time does not collect any user data.</i></p>
+            </article>
+
+            <article class="flex-center-row downloads">
+                <a href="https://chromewebstore.google.com/detail/salah-time/fdcdplphhahmakbgjefenejojakpcnnd" target="_blank"><img src="images/Install-on-Chrome.svg" alt="Install on Chrome"></a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/salah-time/" target="_blank"><img src="images/Install-on-Firefox.svg" alt="Install on Firefox"></a>
+                <a href="#" target="_blank"><img src="images/Install-on-Edge.svg" alt="Install on Edge"></a>
+                <a href="#" target="_blank"><img src="images/Install-on-Opera.svg" alt="Install on Opera"></a>
+            </article>
+        </section>
+
+        <section id="demo">
+            <iframe src="app/" id="widgetIframe" class="widgetIframe" loading="lazy"></iframe>
+            <script>
+                const iframe = document.getElementById("widgetIframe");
+                
+                iframe.addEventListener("load", () => {
+                    iframe.contentWindow.document.querySelector("#setZoom").setAttribute("disabled", "disabled");
+                    console.log("loaded");
+                });
+            </script>
+            <h2>Try out the App!</h2>
+            <p>You can se the extension as a standalone web application in <a href="/app" target="_blank">www.salah-time.com/app</a></p>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+
+            <article class="card">
+                <img src="images/theme.png" alt="App Theme Preview" width="600" height="566" loading="lazy">
+                <p>Light & Dark mode to suit user preferences</p>
+            </article>
+
+            <article class="card">
+                <img src="images/location.png" alt="Setting Location Preview" width="600" height="477" loading="lazy">
+                <p>Set / Change Location Automatically or Manually (Requires Internet Connection!)</p>
+            </article>
+
+            <article class="card">
+                <img src="images/tune.png" alt="Setting Timing Offsets Preview" width="600" height="886" loading="lazy">
+                <p>Tune / Offset prayer time in minutes</p>
+            </article>
+
+            <article class="card">
+                <img src="images/app-scale.png" alt="Setting App Scale Preview" width="600" height="451" loading="lazy">
+                <p>Change Extension Scale / Zoom Level.</p>
+            </article>     
+        </section>
+
+        <section id="api">
+            <h2>AlAdhan API</h2>
+            <p>The App uses <a href="https://aladhan.com/prayer-times-api">AlAdhan API</a> to fetch the latest prayer timings based on latitude and longitude of the user and prayer time calculation method.</p>
+            <p><a href="https://aladhan.com/calculation-methods">Learn more about prayer time calculation method.</a></p>
+        </section>
+        
+
+        <section class="aboutMe" id="aboutMe">
+            <div>
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="wave">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+            <h2>About Me</h2>
+            <p>Hi, I'm Wahid. I build cool websites and apps.</p>
+            <p>Follow me on:</p>
+            <div>
+                <img src="images/Website.svg" alt="Website Icon" width="35" height="35" loading="lazy">
+                <img src="images/github.svg" alt="Github Icon" width="35" height="35" loading="lazy">
+                <img src="images/linkedin.svg" alt="LinkedIn Icon" width="35" height="35" loading="lazy">
+                <img src="images/facebook.svg" alt="Facebook Icon" width="35" height="35" loading="lazy">
+                <img src="images/instagram.svg" alt="Instagram Icon" width="35" height="35" loading="lazy">
+            </div>
+        </section>
+
+        <section id="getInTouch">
+            <h2>Get In Touch</h2>
+            <form action="">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
+                <button type="reset">Clear</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Najmul Huda Wahid. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const toggleMenu = () => {
+            document.querySelector("#menu").classList.toggle("showMenu");
+            document.querySelector("#menuIcon").classList.toggle("menu__icon-x");
+        };
+
+        document.getElementById("menuBtn").addEventListener("click", () => {
+            toggleMenu();
+        });
+
+        document.getElementById("menu").addEventListener("focusout", () => {
+            toggleMenu();
+        });
+    </script>
 </body>
 </html>
