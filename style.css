@@ -95,7 +95,7 @@ input, button, textarea {
 
     /* COLORS */
     --font-color: #202020;
-    --h1-color: #E6E6E6;
+    --h1-color: #fff;
     --bg-color: #B7B7B7;
     --link-color: #402020;
     --fall-back-green: #1AA96E;
@@ -442,14 +442,16 @@ h2 {
     height: 5vh;
     clip-path: polygon(0% 0%, 0% 80%, 100% 20%, 100% 0%);
     background-color: var(--aboutMe-bg);
-    /* position: absolute;
-    top: -1vh; */
+    position: absolute;
+    top: -1px;
 }
 
 .getInTouch {
     background-color: var(--fall-back-green);
     background-image: var(--CTA-gradient);
 }
+
+
 /*//////////////////////////// FOOTER ////////////////////////////*/
 .footer {
     height: 25vh;
