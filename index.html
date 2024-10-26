@@ -11,7 +11,7 @@
     <script>
         localStorage.setItem("scale", 1);
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mini.css">
 </head>
 <body>
     <header class="header">
@@ -47,10 +47,10 @@
             
             <article class="flex-center-row downloads relative">
                 <div class="marker" id="downloads"></div>
-                <a href="https://chromewebstore.google.com/detail/salah-time/fdcdplphhahmakbgjefenejojakpcnnd" target="_blank"><img src="images/Install-on-Chrome.svg" alt="Install on Chrome" width="255" height="48" loading="lazy"></a>
-                <a href="https://addons.mozilla.org/en-US/firefox/addon/salah-time/" target="_blank"><img src="images/Install-on-Firefox.svg" alt="Install on Firefox" width="255" height="48" loading="lazy"></a>
-                <a href="#" target="_blank"><img src="images/Install-on-Edge.svg" alt="Install on Edge" width="255" height="48" loading="lazy"></a>
-                <a href="#" target="_blank"><img src="images/Install-on-Opera.svg" alt="Install on Opera" width="255" height="48" loading="lazy"></a>
+                <a href="https://chromewebstore.google.com/detail/salah-time/fdcdplphhahmakbgjefenejojakpcnnd" target="_blank"><img src="images/Install-on-Chrome.svg" alt="Install on Chrome" width="255" height="48" loading="lazy" class="install_btn"></a>
+                <a href="https://addons.mozilla.org/en-US/firefox/addon/salah-time/" target="_blank"><img src="images/Install-on-Firefox.svg" alt="Install on Firefox" width="255" height="48" loading="lazy" class="install_btn"></a>
+                <a href="#" target="_blank"><img src="images/Install-on-Edge.svg" alt="Install on Edge" width="255" height="48" loading="lazy" class="install_btn"></a>
+                <a href="#" target="_blank"><img src="images/Install-on-Opera.svg" alt="Install on Opera" width="255" height="48" loading="lazy" class="install_btn"></a>
             </article>
             
         </section>
@@ -96,34 +96,36 @@
         </section>
         
 
-        <section class="aboutMe" id="aboutMe">
-            <div>
+        <section class="relative flex-center-column aboutMe" id="aboutMe">
+            <div class="div__wave">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="wave">
                     <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
                 </svg>
             </div>
             <h2>About Me</h2>
-            <img src="images/najmul.jpg" alt="Najmul Huda Wahid" width="600" height="720" loading="lazy">
-            <p>Hi, I'm Wahid. I build cool websites and apps.</p>
+            <img src="images/najmul.jpg" alt="Najmul Huda Wahid" width="600" height="720" loading="lazy" class="myPhoto">
+            <p class="myIntro">Hi, I'm Wahid. I&nbsp;build cool websites and apps.</p>
             <p>Follow me on:</p>
             <div class="flex-center-row socials">
-                <a href="#" target="_blank"><img src="images/Website.svg" alt="Website Icon" width="35" height="35" loading="lazy"></a>
-                <a href="https://github.com/w4-h1d" target="_blank"><img src="images/github.svg" alt="Github Icon" width="35" height="35" loading="lazy"></a>
-                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn Icon" width="35" height="35" loading="lazy"></a>
-                <a href="https://www.facebook.com/najmulhudawahid/" target="_blank"><img src="images/facebook.svg" alt="Facebook Icon" width="35" height="35" loading="lazy"></a>
-                <a href="https://www.instagram.com/w4.h1d/" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon" width="35" height="35" loading="lazy"></a>
+                <a href="#" target="_blank"><img src="images/Website.svg" alt="Website Icon" width="35" height="35" loading="lazy" class="social_icon"></a>
+                <a href="https://github.com/w4-h1d" target="_blank"><img src="images/github.svg" alt="Github Icon" width="35" height="35" loading="lazy" class="social_icon"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn Icon" width="35" height="35" loading="lazy" class="social_icon"></a>
+                <a href="https://www.facebook.com/najmulhudawahid/" target="_blank"><img src="images/facebook.svg" alt="Facebook Icon" width="35" height="35" loading="lazy" class="social_icon"></a>
+                <a href="https://www.instagram.com/w4.h1d/" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon" width="35" height="35" loading="lazy" class="social_icon"></a>
             </div>
         </section>
 
-        <section id="getInTouch" class="getInTouch relative">
+        <section id="getInTouch" class="getInTouch relative flex-center-column">
             <div class="polygon"></div>
             <h2>Get In Touch</h2>
-            <form action="">
-                <input type="text" name="name" placeholder="Name">
-                <input type="email" name="email" placeholder="Email">
-                <textarea name="message" placeholder="Your Message"></textarea>
-                <button type="submit">Send</button>
-                <button type="reset">Clear</button>
+            <form action="https://formspree.io/f/mqakeebr" method="POST" class="flex-center-column form">
+                <input type="text" name="name" placeholder="Name" class="form__input" required>
+                <input type="email" name="email" placeholder="Email" class="form__input" required>
+                <textarea name="message" placeholder="Your Message" class="form__input form__textarea" required></textarea>
+                <div class="form__btns">
+                    <button type="submit" class="form__btn form__send">Send</button>
+                    <button type="reset" class="form__btn form__clear">Clear</button>
+                </div>
             </form>
         </section>
     </main>
