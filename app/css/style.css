@@ -28,7 +28,7 @@
 }
 
 html {
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     font-weight: 700;
     background-color: var(--background);
     color: var(--font-color);
@@ -216,7 +216,7 @@ input {
 }
 
 label {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 form button, select, .tune {
@@ -263,7 +263,7 @@ form button:active, .tune:active {
     text-align: right;
     margin-right: calc(2.5px * var(--scale));
     margin-top: calc(-2.5px * var(--scale));
-    font-weight: 800;
+    font-weight: 900;
 }
 
 .darken-bg {

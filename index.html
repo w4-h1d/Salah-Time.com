@@ -11,7 +11,7 @@
     <script>
         localStorage.setItem("scale", 1);
     </script>
-    <link rel="stylesheet" href="style-mini.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
@@ -24,7 +24,7 @@
                 <li><a href="#getInTouch">Get in Touch</a></li>
             </ul>
         </nav>
-        <button class="flex-center-column menu__btn" id="menuBtn" name="menu"><div class="menu__icon" id="menuIcon"></div></button>
+        <button class="flex-center-column menu__btn" id="menuBtn" aria-label="menu"><div class="menu__icon" id="menuIcon"></div></button>
     </header>
 
     <main class="main">
@@ -137,7 +137,6 @@
                 
         iframe.addEventListener("load", () => {
             iframe.contentWindow.document.querySelector("#setZoom").setAttribute("disabled", "disabled");
-            console.log("loaded");
         });
         
         const toggleMenu = () => {

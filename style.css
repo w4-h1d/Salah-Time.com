@@ -1,4 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-bold-webfont.woff2') format('woff2'),
+         url('/font/roboto-bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-bolditalic-webfont.woff2') format('woff2'),
+         url('/font/roboto-bolditalic-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-italic-webfont.woff2') format('woff2'),
+         url('/font/roboto-italic-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-light-webfont.woff2') format('woff2'),
+         url('/font/roboto-light-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-lightitalic-webfont.woff2') format('woff2'),
+         url('/font/roboto-lightitalic-webfont.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-medium-webfont.woff2') format('woff2'),
+         url('/font/roboto-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-mediumitalic-webfont.woff2') format('woff2'),
+         url('/font/roboto-mediumitalic-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'roboto';
+    src: url('/font/roboto-regular-webfont.woff2') format('woff2'),
+         url('/font/roboto-regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+
+}
+
 
 /* || RESET */
 * {
@@ -19,7 +90,7 @@ input, button, textarea {
 
 /* || VARIABLES */
 :root {
-    --FF: 'Roboto', sans-serif;
+    --FF: 'roboto', sans-serif;
     --FS: clamp(1rem, 2.2vh, 1.5rem);
 
     /* COLORS */
@@ -114,7 +185,7 @@ h2 {
     background-image: var(--green-gradient);
     position: absolute;
     transform: translateY(-105%);
-    transition: all 0.65s;
+    transition: transform 0.45s;
     box-shadow: 0px 5px 15px var(--font-color);
 }
 
@@ -281,7 +352,7 @@ h2 {
 }
 
 .demo__p {
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1.1rem;
     text-align: center;
     margin: 0 2em 2em;
