@@ -11,7 +11,7 @@
     <script>
         localStorage.setItem("scale", 1);
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mini.css">
 </head>
 <body>
     <header class="header">
@@ -24,7 +24,7 @@
                 <li><a href="#getInTouch">Get in Touch</a></li>
             </ul>
         </nav>
-        <button class="flex-center-column menu__btn" id="menuBtn"><div class="menu__icon" id="menuIcon"></div></button>
+        <button class="flex-center-column menu__btn" id="menuBtn" name="menu"><div class="menu__icon" id="menuIcon"></div></button>
     </header>
 
     <main class="main">
@@ -57,7 +57,7 @@
         
         <section class="demo flex-center-column relative">
             <div class="marker" id="demo"></div>
-            <iframe src="app/" id="widgetIframe" class="widgetIframe" loading="lazy"></iframe>
+            <iframe src="app/" id="widgetIframe" class="widgetIframe" title="Salah Time App Demo" loading="lazy"></iframe>
             <h2 class="demo__h2">Try out<br>the App!</h2>
             <p class="demo__p">You can view the extension as a standalone web application in <a href="/app" target="_blank" class="nowrap">www.salah-time.com/app</a></p>
         </section>
@@ -74,7 +74,7 @@
 
             <article class="card">
                 <img src="images/location.png" alt="Setting Location Preview" width="600" height="477" loading="lazy" class="card__img">
-                <p>Set / Change Location Automatically or Manually (Requires Internet Connection!)</p>
+                <p>Set / Change Location Automatically or Manually (<span class="highlight">Requires Internet Connection!</span>)</p>
             </article>
 
             <article class="card">
@@ -106,12 +106,12 @@
             <img src="images/najmul.jpg" alt="Najmul Huda Wahid" width="600" height="720" loading="lazy">
             <p>Hi, I'm Wahid. I build cool websites and apps.</p>
             <p>Follow me on:</p>
-            <div>
-                <img src="images/Website.svg" alt="Website Icon" width="35" height="35" loading="lazy">
-                <img src="images/github.svg" alt="Github Icon" width="35" height="35" loading="lazy">
-                <img src="images/linkedin.svg" alt="LinkedIn Icon" width="35" height="35" loading="lazy">
-                <img src="images/facebook.svg" alt="Facebook Icon" width="35" height="35" loading="lazy">
-                <img src="images/instagram.svg" alt="Instagram Icon" width="35" height="35" loading="lazy">
+            <div class="flex-center-row socials">
+                <a href="#" target="_blank"><img src="images/Website.svg" alt="Website Icon" width="35" height="35" loading="lazy"></a>
+                <a href="https://github.com/w4-h1d" target="_blank"><img src="images/github.svg" alt="Github Icon" width="35" height="35" loading="lazy"></a>
+                <a href="https://www.linkedin.com/" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn Icon" width="35" height="35" loading="lazy"></a>
+                <a href="https://www.facebook.com/najmulhudawahid/" target="_blank"><img src="images/facebook.svg" alt="Facebook Icon" width="35" height="35" loading="lazy"></a>
+                <a href="https://www.instagram.com/w4.h1d/" target="_blank"><img src="images/instagram.svg" alt="Instagram Icon" width="35" height="35" loading="lazy"></a>
             </div>
         </section>
 

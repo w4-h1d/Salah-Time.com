@@ -66,6 +66,11 @@ input, button, textarea {
     position: relative;
 }
 
+.highlight {
+    color: var(--link-color);
+    font-style: italic;
+}
+
 /* || GENERAL STYLE */
 
 html {
@@ -337,7 +342,7 @@ h2 {
 }
 
 .api p {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-wrap: pretty;
 }
 
@@ -354,6 +359,10 @@ h2 {
 
 .shape-fill {
     fill: var(--bg-color);
+}
+
+.socials {
+    gap: 1em;
 }
 
 /*//////////////////////////// GET IN TOUCH ////////////////////////////*/
