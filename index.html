@@ -11,7 +11,7 @@
     <script>
         localStorage.setItem("scale", 1);
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mini.css">
 </head>
 <body>
     <header class="header">
@@ -27,7 +27,7 @@
         <button class="flex-center-column menu__btn" id="menuBtn" aria-label="menu"><div class="menu__icon" id="menuIcon"></div></button>
     </header>
 
-    <main class="main">
+    <main class="main relative">
         <div class="hero-bg"></div>
         <section>
             <article class="title">
@@ -42,7 +42,7 @@
             <article class="flex-center-column">
                 <img src="images/hero.webp" alt="main" class="hero" width="1301" height="1086" loading="eager">
 
-                <p class="hero-text">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method.<i>Salah Time does not collect any user data.</i></p>   
+                <p class="hero-text">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method. <i>Salah Time does not collect any user data.</i></p>   
             </article>
             
             <article class="flex-center-row downloads relative">
@@ -57,9 +57,13 @@
         
         <section class="demo flex-center-column relative">
             <div class="marker" id="demo"></div>
-            <iframe src="app/" id="widgetIframe" class="widgetIframe" title="Salah Time App Demo" loading="lazy"></iframe>
-            <h2 class="demo__h2">Try out<br>the App!</h2>
-            <p class="demo__p">You can view the extension as a standalone web application in <a href="/app" target="_blank" class="nowrap">www.salah-time.com/app</a></p>
+            <div class="iframe__div">
+                <iframe src="app/" id="widgetIframe" class="widgetIframe" title="Salah Time App Demo" loading="lazy"></iframe>
+            </div>
+            <div class="flex-center-column">
+                <h2 class="demo__h2">Try out<br>the App!</h2>
+                <p class="demo__p">You can view the extension as a standalone web application in <a href="/app" target="_blank" class="nowrap">www.salah-time.com/app</a></p>
+            </div>
         </section>
 
         <a href="#" class="backToTop"><img src="images/up-arrow.svg" alt="back to top button" width="32" height="30" class="backToTop__img"></a>
@@ -71,22 +75,22 @@
 
             <article class="card">
                 <img src="images/theme.webp" alt="App Theme Preview" width="600" height="566" loading="lazy" class="card__img">
-                <p>Light & Dark mode to suit user preferences</p>
+                <p class="card__p">Light & Dark mode to suit user preferences</p>
             </article>
 
-            <article class="card">
+            <article class="card reverse">
                 <img src="images/location.webp" alt="Setting Location Preview" width="600" height="477" loading="lazy" class="card__img">
-                <p>Set / Change Location Automatically or Manually (<span class="highlight">Requires Internet Connection!</span>)</p>
+                <p class="card__p">Set / Change Location Automatically (<span class="highlight">Requires Internet Connection!</span>)</p>
             </article>
 
             <article class="card">
                 <img src="images/tune.webp" alt="Setting Timing Offsets Preview" width="600" height="886" loading="lazy" class="card__img">
-                <p>Tune / Offset prayer time in minutes</p>
+                <p class="card__p">Tune / Offset prayer time in minutes</p>
             </article>
 
-            <article class="card">
+            <article class="card reverse">
                 <img src="images/app-scale.webp" alt="Setting App Scale Preview" width="600" height="451" loading="lazy" class="card__img">
-                <p>Change Extension Scale / Zoom Level.</p>
+                <p class="card__p">Change Extension Scale (Zoom Level).</p>
             </article>     
         </section>
 
@@ -105,8 +109,10 @@
                 </svg>
             </div>
             <h2>About Me</h2>
-            <img src="images/najmul.jpg" alt="Najmul Huda Wahid" width="600" height="720" loading="lazy" class="myPhoto">
-            <p class="myIntro">Hi, I'm Wahid. I&nbsp;build cool websites and apps.</p>
+            <div class="flex-center-row aboutMe__div">
+                <img src="images/najmul.jpg" alt="Najmul Huda Wahid" width="600" height="720" loading="lazy" class="myPhoto">
+                <p class="myIntro">Hi, I'm Wahid. I&nbsp;build cool websites and apps.</p>
+            </div>
             <p>Follow me on:</p>
             <div class="flex-center-row socials">
                 <a href="#" target="_blank"><img src="images/Website.svg" alt="Website Icon" width="35" height="35" loading="lazy" class="social_icon"></a>
@@ -117,18 +123,23 @@
             </div>
         </section>
         
-        <section id="getInTouch" class="getInTouch relative flex-center-column">
-            <div class="polygon"></div>
-            <h2>Get In Touch</h2>
-            <form action="https://formspree.io/f/mqakeebr" method="POST" class="flex-center-column form">
-                <input type="text" name="name" placeholder="Name" class="form__input" required>
-                <input type="email" name="email" placeholder="Email" class="form__input" required>
-                <textarea name="message" placeholder="Your Message" class="form__input form__textarea" required></textarea>
-                <div class="form__btns">
-                    <button type="submit" class="form__btn form__send">Send</button>
-                    <button type="reset" class="form__btn form__clear">Clear</button>
+        <section id="getInTouch" class="getInTouch relative">
+            <div class="polygon"></div>     
+            <div class="flex-center-row form__div">
+                <img src="images/mail.svg" alt="mail logo" width="600" height="500" loading="lazy" class="mail">
+                <div class="flex-center-column form__div_main">
+                    <h2 class="getInTouch__h2">Get In Touch</h2>
+                    <form action="https://formspree.io/f/mqakeebr" method="POST" class="flex-center-column form">
+                        <input type="text" name="name" placeholder="Name" class="form__input" required>
+                        <input type="email" name="email" placeholder="Email" class="form__input" required>
+                        <textarea name="message" placeholder="Your Message" class="form__input form__textarea" required></textarea>
+                        <div class="form__btns">
+                            <button type="submit" class="form__btn form__send">Send</button>
+                            <button type="reset" class="form__btn form__clear">Clear</button>
+                        </div>
                 </div>
-            </form>
+                </form>
+            </div>
         </section>
         
     </main>
