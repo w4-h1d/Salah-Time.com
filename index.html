@@ -160,13 +160,10 @@
             document.querySelector("#menuIcon").classList.toggle("menu__icon-x");
         };
 
-        document.getElementById("menuBtn").addEventListener("click", () => {
-            toggleMenu();
-        });
+        document.getElementById("menuBtn").addEventListener("click", () => toggleMenu());
 
-        document.getElementById("menu").addEventListener("focusout", () => {
-            toggleMenu();
-        });
+        document.getElementById("menu").addEventListener("focusout", () => toggleMenu());
+
     </script>
 </body>
 </html>
