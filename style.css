@@ -304,8 +304,9 @@ h2 {
 
 .hero {
     margin-left: max(-9vw, -123px);
-    max-width: 80vw;
-    min-width: 350px;  
+    min-width: 350px;
+    width: 80vw;
+    max-width: 800px;
 }
 
 .logo {
@@ -394,8 +395,7 @@ h2 {
 /*/////////////////////////////////////////////////////////////////////////*/
 /*////////////////////////////// APP DEMO /////////////////////////////////*/
 .demo__h2 {
-    /* font-size: clamp(3rem, min(10vh, 8vw), 8rem); */
-    font-size: min(10vh, 20vw);
+    font-size: clamp(3rem, min(10vh, 20vw), 4rem);
     text-wrap: pretty;
     text-align: center;
     line-height: 1.1;
@@ -680,7 +680,58 @@ h2 {
 
 /*/////////////////////////////////////////////////////////////////////////*/
 /*//////////////////////////// MEDIA QUERIES //////////////////////////////*/
+@media screen and (min-width: 576px) and (min-aspect-ratio: 5/4) {
+    /*/////////////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////// HERO SECTION /////////////////////////////*/
+    .hero {
+        width: 26vw;
+        margin-left: -2.5vw;
+    }
 
+    .downloads {
+        gap: 1.25em;
+        margin: 2vh 0 10vh;
+    }
+
+    /*/////////////////////////////////////////////////////////////////////////*/
+    /*////////////////////////////// APP DEMO /////////////////////////////////*/
+    .demo__h2 {
+        font-size: 4rem;
+        margin: 5vh 0 3vh;
+    }
+
+    .demo__p {
+        font-size: 1.25rem;
+        max-width: 400px;
+    }
+
+    .demo {
+        flex-flow: row-reverse wrap;
+        margin-left: -5vw;
+        margin-bottom: 7.5vh;
+    }
+
+    /*/////////////////////////////////////////////////////////////////////////*/
+    /*///////////////////////////////// ABOUT ME //////////////////////////////*/
+    .aboutMe__div {
+        gap: 2em;
+        flex-wrap: nowrap;
+    }
+    
+    .myPhoto {
+        width: 22.5vw;
+    }
+
+    .myIntro {
+        width: 50%;
+        font-size: 2.5rem;
+    }
+
+    .socials {
+        gap: 2em;
+    }
+
+}
 
 @media screen and (min-width: 576px) {
     /*/////////////////////////////////////////////////////////////////////////*/
@@ -691,7 +742,7 @@ h2 {
     }
 
     .hero {
-        max-width: 50vw;
+        width: 50vw;
     }
 
     .logo {
@@ -719,7 +770,7 @@ h2 {
     /*/////////////////////////////////////////////////////////////////////////*/
     /*////////////////////////////// APP DEMO /////////////////////////////////*/
     .demo__h2 {
-        font-size: min(9.5vh, 20vw);
+        font-size: clamp(3rem, min(9.5vh, 20vw), 5rem);
         text-wrap: pretty;
         text-align: center;
         line-height: 1.1;
@@ -817,60 +868,6 @@ h2 {
 }
 
 
-@media screen and (min-width: 576px) and (min-aspect-ratio: 5/4) {
-    /*/////////////////////////////////////////////////////////////////////////*/
-    /*////////////////////////////// HERO SECTION /////////////////////////////*/
-    .hero {
-        max-width: 26vw;
-        margin-left: -2.5vw;
-    }
-
-    .downloads {
-        gap: 1.25em;
-        margin: 2vh 0 10vh;
-    }
-
-    /*/////////////////////////////////////////////////////////////////////////*/
-    /*////////////////////////////// APP DEMO /////////////////////////////////*/
-    .demo__h2 {
-        font-size: 4rem;
-        margin: 5vh 0 3vh;
-    }
-
-    .demo__p {
-        font-size: 1.25rem;
-        max-width: 400px;
-    }
-
-    .demo {
-        flex-flow: row-reverse wrap;
-        margin-left: -5vw;
-        margin-bottom: 7.5vh;
-    }
-
-    /*/////////////////////////////////////////////////////////////////////////*/
-    /*///////////////////////////////// ABOUT ME //////////////////////////////*/
-    .aboutMe__div {
-        gap: 2em;
-        flex-wrap: nowrap;
-    }
-    
-    .myPhoto {
-        width: 22.5vw;
-    }
-
-    .myIntro {
-        width: 50%;
-        font-size: 2.5rem;
-    }
-
-    .socials {
-        gap: 2em;
-    }
-
-}
-
-
 
 @media screen and (min-width: 1024px) and (min-aspect-ratio: 5/4)  {
     h2 {
@@ -920,7 +917,10 @@ h2 {
         height: 65vh;
     }
 
-    
+    .hero {
+        width: 27vw;
+    }
+
     
     .title {
         padding: 4vh 2em 5vh;
