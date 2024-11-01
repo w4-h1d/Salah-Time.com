@@ -187,6 +187,10 @@ a:hover {
     text-decoration: underline;
 }
 
+a:active {
+    color: var(--btn-send);
+}
+
 h2 {
     text-align: center;
     font-size: 2.5rem;
@@ -229,6 +233,10 @@ h2 {
 
 .menu__ul a:hover {
     text-decoration: none;
+}
+
+.menu__ul a:active {
+    color: var(--fall-back-green);
 }
 
 .menu__btn {
@@ -334,16 +342,24 @@ h2 {
 .downloadBtn {
     display: block;
     font-size: clamp(0.85rem, min(3.5vh, 3.5vw), 1.25rem);
-    border: min(min(0.65vh, 0.65vw), 5px) solid var(--h1-color);
+    border: 0.2em solid var(--h1-color);
     padding: 0.4em 0.55em;
     text-align: center;
-    border-radius: min(1.5vw, 1.5vh);
+    border-radius: 0.5rem;
     margin-top: 0.45em;
     font-style: normal;
 }
 
 .downloadBtn:hover {
     text-decoration: none;
+}
+
+.downloadBtn:active {
+    color: var(--fall-back-green);
+    border-color: var(--fall-back-green);
+    transform-origin: center;
+    transform: scale(0.95);
+    transition: all 0.15s;
 }
 
 .hero-text {
@@ -363,9 +379,16 @@ h2 {
 
 .install_btn {
     box-shadow: -5px 5px 5px var(--shadow-color);
-    border-radius: min(2vw, 1.15vh);
+    border-radius: 0.5rem;
     outline: none;
     border: none;
+}
+
+.install_btn:active {
+    filter: brightness(0.85);
+    transform-origin: center;
+    transform: scale(0.95);
+    transition: all 0.15s;
 }
 
 /*/////////////////////////////////////////////////////////////////////////*/
@@ -502,6 +525,13 @@ h2 {
     height: auto;
 }
 
+.social_icon:active {
+    filter: brightness(1.25);
+    transform-origin: center;
+    transform: scale(0.9);
+    transition: all 0.15s;
+}
+
 
 
 /*/////////////////////////////////////////////////////////////////////////*/
@@ -541,7 +571,7 @@ h2 {
     padding: min(3vh, 3vw);
     background-color: var(--aboutMe-bg);
     border: 2px solid var(--font-color);
-    border-radius: min(2vw, 2vh);
+    border-radius: 0.5rem;
 }
 
 .form__input::placeholder {
@@ -566,10 +596,22 @@ h2 {
 .form__btn {
     padding: 0.5em;
     width: 35%;
-    border-radius: min(2vw, 2vh);
+    border-radius: 0.5rem;
     font-weight: 500;
     background-color: var(--aboutMe-bg);
     box-shadow: 0px 0px 5px var(--shadow-color);
+}
+
+.form__btn:hover {
+    cursor: pointer;
+}
+
+.form__btn:active {
+    filter: brightness(0.9);
+    font-weight: 700;
+    transform-origin: center;
+    transform: scale(0.90);
+    transition: all 0.15s;
 }
 
 .form__send {
