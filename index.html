@@ -7,11 +7,16 @@
     <meta name="description" content="The Official Website of Salah Time Browser Extension">
     <meta name="author" content="Najmul Huda Wahid">
     <title>Salah Time</title>
+    <link rel='preload' href='/images/Salah-Time-Logo.svg' as='image' type='image/svg+xml'>
+    <link rel='preload' href='/images/hero.webp' as='image' type='image/svg+xml'>
+    <link rel='preload' href='/font/roboto-regular-webfont.woff2' crossorigin='anonymous' as='font' type='font/woff2'>
+    <link rel='preload' href='/font/roboto-regular-webfont.woff' crossorigin='anonymous' as='font' type='font/woff'>
+    <link rel="preload" href="style-mini.css" as="style">
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <script>
         localStorage.setItem("scale", 1);
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mini.css">
 </head>
 <body>
     <header class="header">
@@ -66,7 +71,7 @@
             </div>
         </section>
 
-        <a href="#" class="backToTop"><img src="images/up-arrow.svg" alt="back to top button" width="32" height="30" class="backToTop__img"></a>
+        <a href="#" class="backToTop"><img src="images/up-arrow.svg" alt="back to top button" width="32" height="30" class="backToTop__img" loading="lazy"></a>
 
         <section class="features relative flex-center-column">
             <div class="marker" id="features"></div>
@@ -137,8 +142,8 @@
                             <button type="submit" class="form__btn form__send">Send</button>
                             <button type="reset" class="form__btn form__clear">Clear</button>
                         </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </section>
         
