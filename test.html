@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --color: #555;
+            --red-rgb: 248 113 113;
+            --blue-rgb: 56 189 248;
+            --green-rgb: 74 222 128;
+            --yellow-rgb: 253 224 71;
+        }
+        body {
+            background: hsl(211, 0%, 20%);
+            color: white;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* margin-top: -100vh; */
+            background: linear-gradient(125deg, hsla(0, 0%, 0%, 0.7), hsla(0, 0%, 4%, 0));
+            min-height: 100vh;
+            position: relative;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .bg {
+            clip-path: (0% 0%, 0% 100vh, 100vw 100vh, 100vw 0);
+        }
+        #container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 1px;
+            position: absolute;
+            top: 0;
+            z-index: 0;
+            overflow: clip;
+            transform-origin: center;
+            /* transform: rotateX(32deg) rotateY(-24deg) rotateZ(25deg) scale(1.5); */
+    
+        }
+
+        .card-row {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 1px;
+        }
+
+        .card {
+            width: 40px;
+            height: 40px;
+            background-color: hsl(210, 0%, 5%);
+            color: white;
+            transition: background-color 1.5s;
+            z-index: 100;
+        }
+
+        .card-row:nth-child(odd) .card:nth-child(odd) {
+            background-color: hsl(210, 0%, 7%);
+        }
+
+        .card-row:nth-child(even) .card:nth-child(even) {
+            background-color: hsl(210, 0%, 6%);
+        }
+
+        .card-row:nth-child(n) .card:hover {
+            transition: 0s;
+            background-color: var(--color);
+            transform: translateZ(50px);
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="bg"><div id="container"></div></div>
+    <main>
+        <h1>Hello World!</h1>
+    </main>
+</body>
+<script>
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+    const squareWidth = 40;
+    let column = Math.floor(width / squareWidth);
+    let row = Math.floor(height / squareWidth);
+
+    const backgroundBuild = () => {
+        for (let i = 0; i <= row; i++) {
+            const newDiv = document.createElement("div");
+            newDiv.classList.add("card-row");
+            newDiv.setAttribute("id", `card-row-${i}`);
+            document.getElementById("container").appendChild(newDiv);
+
+            for (let j = 0; j <= column; j++) {
+                const newDiv = document.createElement("div");
+                newDiv.classList.add("card");
+                document.getElementById(`card-row-${i}`).appendChild(newDiv);
+            }
+        }   
+    }
+
+    const randomAnimation = () => {
+        let cards = document.querySelectorAll(".card");
+        setInterval(() => {
+            const randomCard = Math.floor(Math.random() * cards.length);
+            const hue = Math.floor(Math.random() * 360);
+            const bg = getComputedStyle(cards[randomCard]).backgroundColor;
+
+            cards[randomCard].style.backgroundColor = `hsl(${hue}, 73%, 61%)`;
+
+            setTimeout(() => {
+                cards[randomCard].style.backgroundColor = bg;
+            }, 1000)
+        }, 500)
+    }
+
+    backgroundBuild();
+    randomAnimation();
+
+    const changeColor = () => {
+        const hue = Math.floor(Math.random() * 360);
+            document.querySelector(":root").style.setProperty("--color", `hsl(${hue}, 73%, 61%)`); 
+    };
+
+    document.addEventListener("mousemove", (e) => {
+        if (e.clientX % squareWidth === 0) {
+            changeColor();
+        }
+        if (e.clientY % squareWidth === 0) {
+            changeColor();
+        }
+    })
+
+    
+    window.addEventListener("resize", () => {
+        height = window.innerHeight;
+        width = window.innerWidth;
+        column = Math.floor(width / squareWidth);
+        row = Math.floor(height / squareWidth);
+        document.getElementById("container").innerHTML = "";
+        backgroundBuild();
+        randomAnimation();
+    })
+</script>
+</html>
