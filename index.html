@@ -17,6 +17,50 @@
         localStorage.setItem("scale", 1);
     </script>
     <link rel="stylesheet" href="style-mini.css">
+    <style>
+        /*-----------Background Grid Effect-------------*/
+        :root {
+            --gridBG: hsla(155, 85%, 55%, 0.3);
+        }
+        .hero-bg {
+            overflow-x: clip;
+        }
+        #container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            gap: 1px;
+            margin-top: -3px;
+            background: #023a23;
+            transform: rotateX(32deg) rotateY(-24deg) rotateZ(25deg) scale(1.75);
+            z-index: 0;
+        }
+        .card-row {
+            display: flex;
+            flex-flow: row nowrap;
+            gap: 1px;
+        }
+        .square {
+            width: 25px;
+            height: 25px;
+            background-color: #0c2e1e;
+            transition: background-color 1.75s;
+        }
+        .card-row:nth-child(n) .square:hover {
+            transition: 0s;
+            background-color: var(--gridBG);
+            transform: translateZ(50px);
+        }
+        .dark {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(135deg, hsla(152, 59%, 3%, 0.562) 0%, rgba(34,34,34,0) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -33,7 +77,10 @@
     </header>
 
     <main class="main relative">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <div class="dark"></div>
+            <div id="container"></div>
+        </div>
         <section>
             <article class="title">
                 <img src="images/Salah-Time-Logo.svg" alt="Salah Time logo" width="300" height="300" loading="eager" class="logo">
@@ -170,6 +217,71 @@
 
         document.getElementById("menu").addEventListener("focusout", () => toggleMenu());
 
+    </script>
+
+    <script>
+        const squareWidth = 25;
+        const gridBG = document.getElementById("container");
+
+        const backgroundBuild = () => {
+            const height = gridBG.offsetHeight;
+            const width = gridBG.offsetWidth;
+            const column = Math.floor(width / squareWidth);
+            const row = Math.floor(height / squareWidth);
+
+            for (let i = 0; i <= row; i++) {
+                const newDiv = document.createElement("div");
+                newDiv.classList.add("card-row");
+                newDiv.setAttribute("id", `card-row-${i}`);
+                document.getElementById("container").appendChild(newDiv);
+
+                for (let j = 0; j <= column; j++) {
+                    const newDiv = document.createElement("div");
+                    newDiv.classList.add("square");
+                    document.getElementById(`card-row-${i}`).appendChild(newDiv);
+                }
+            }   
+        }
+
+        const randomAnimation = () => {
+        let cards = document.querySelectorAll(".square");
+            setInterval(() => {
+                const randomCard = Math.floor(Math.random() * cards.length);
+                const hue = Math.floor(Math.random() * 360);
+                const bg = getComputedStyle(cards[randomCard]).backgroundColor;
+
+                /* cards[randomCard].style.backgroundColor = `hsl(${hue}, 73%, 61%)`; */
+                cards[randomCard].style.backgroundColor = `#009457`;
+
+                setTimeout(() => {
+                    cards[randomCard].style.backgroundColor = bg;
+                }, 1500)
+            }, 350)
+        }
+
+        backgroundBuild();
+        randomAnimation();
+
+        window.addEventListener("resize", () => {
+            document.getElementById("container").innerHTML = "";
+            backgroundBuild();
+            randomAnimation();
+        })
+
+        const changeColor = () => {
+            let lightness = Math.floor(Math.random() * 90);
+            if (lightness < 30) { lightness += 30; }
+            document.querySelector(":root").style.setProperty("--gridBG", `hsla(155, 85%, ${lightness}%, 0.4)`); 
+        };
+
+        document.addEventListener("mousemove", (e) => {
+            if (e.clientX % squareWidth === 0) {
+                changeColor();
+            }
+            if (e.clientY % squareWidth === 0) {
+                changeColor();
+            }
+        })
     </script>
 </body>
 </html>
