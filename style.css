@@ -309,6 +309,7 @@ h2 {
     width: 80vw;
     max-width: 800px;
     z-index: 1;
+    pointer-events: none;
 }
 
 .logo {
@@ -317,6 +318,7 @@ h2 {
     border-radius: min(3vw, 3vh);
     box-shadow: -5px 5px 5px var(--shadow-color);
     z-index: 1;
+    pointer-events: none;
 }
 
 .title :is(h1, p, a) {
@@ -332,6 +334,7 @@ h2 {
     padding: 10vh 0.5em 5vh;
     gap: 0.5em;
     z-index: 10;
+    pointer-events: none;
 }
 
 .h1 {
@@ -354,6 +357,7 @@ h2 {
     border-radius: 0.5rem;
     margin-top: 0.45em;
     font-style: normal;
+    pointer-events: all;
 }
 
 .downloadBtn:hover {
