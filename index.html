@@ -96,6 +96,70 @@
 
                 <p class="hero-text">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method. <i>Salah Time does not collect any user data.</i></p>   
             </article>
+
+            <script>
+                const squareWidth = 20;
+                const gridBG = document.getElementById("container");
+        
+                const backgroundBuild = () => {
+                    const height = gridBG.offsetHeight;
+                    const width = gridBG.offsetWidth;
+                    const column = Math.floor(width / squareWidth);
+                    const row = Math.floor(height / squareWidth);
+        
+                    for (let i = 0; i <= row; i++) {
+                        const newDiv = document.createElement("div");
+                        newDiv.classList.add("card-row");
+                        newDiv.setAttribute("id", `card-row-${i}`);
+                        document.getElementById("container").appendChild(newDiv);
+        
+                        for (let j = 0; j <= column; j++) {
+                            const newDiv = document.createElement("div");
+                            newDiv.classList.add("square");
+                            document.getElementById(`card-row-${i}`).appendChild(newDiv);
+                        }
+                    }   
+                }
+        
+                const randomAnimation = () => {
+                let cards = document.querySelectorAll(".square");
+                    setInterval(() => {
+                        const randomCard = Math.floor(Math.random() * cards.length);
+                        const hue = Math.floor(Math.random() * 360);
+                        const bg = getComputedStyle(cards[randomCard]).backgroundColor;
+        
+                        cards[randomCard].style.backgroundColor = `hsla(155, 100%, 29%, 0.85)`;
+        
+                        setTimeout(() => {
+                            cards[randomCard].style.backgroundColor = bg;
+                        }, 1500)
+                    }, 300)
+                }
+        
+                backgroundBuild();
+                randomAnimation();
+        
+                window.addEventListener("resize", () => {
+                    document.getElementById("container").innerHTML = "";
+                    backgroundBuild();
+                    randomAnimation();
+                })
+        
+                const changeColor = () => {
+                    let lightness = Math.floor(Math.random() * 90);
+                    if (lightness < 30) { lightness += 30; }
+                    document.querySelector(":root").style.setProperty("--gridBG", `hsla(155, 85%, ${lightness}%, 0.4)`); 
+                };
+        
+                document.addEventListener("mousemove", (e) => {
+                    if (e.clientX % squareWidth === 0) {
+                        changeColor();
+                    }
+                    if (e.clientY % squareWidth === 0) {
+                        changeColor();
+                    }
+                })
+            </script>
             
             <article class="flex-center-row downloads relative">
                 <div class="marker" id="downloads"></div>
@@ -217,71 +281,6 @@
 
         document.getElementById("menu").addEventListener("focusout", () => toggleMenu());
 
-    </script>
-
-    <script>
-        const squareWidth = 20;
-        const gridBG = document.getElementById("container");
-
-        const backgroundBuild = () => {
-            const height = gridBG.offsetHeight;
-            const width = gridBG.offsetWidth;
-            const column = Math.floor(width / squareWidth);
-            const row = Math.floor(height / squareWidth);
-
-            for (let i = 0; i <= row; i++) {
-                const newDiv = document.createElement("div");
-                newDiv.classList.add("card-row");
-                newDiv.setAttribute("id", `card-row-${i}`);
-                document.getElementById("container").appendChild(newDiv);
-
-                for (let j = 0; j <= column; j++) {
-                    const newDiv = document.createElement("div");
-                    newDiv.classList.add("square");
-                    document.getElementById(`card-row-${i}`).appendChild(newDiv);
-                }
-            }   
-        }
-
-        const randomAnimation = () => {
-        let cards = document.querySelectorAll(".square");
-            setInterval(() => {
-                const randomCard = Math.floor(Math.random() * cards.length);
-                const hue = Math.floor(Math.random() * 360);
-                const bg = getComputedStyle(cards[randomCard]).backgroundColor;
-
-                /* cards[randomCard].style.backgroundColor = `hsl(${hue}, 73%, 61%)`; */
-                cards[randomCard].style.backgroundColor = `hsla(155, 100%, 29%, 0.85)`;
-
-                setTimeout(() => {
-                    cards[randomCard].style.backgroundColor = bg;
-                }, 1500)
-            }, 300)
-        }
-
-        backgroundBuild();
-        randomAnimation();
-
-        window.addEventListener("resize", () => {
-            document.getElementById("container").innerHTML = "";
-            backgroundBuild();
-            randomAnimation();
-        })
-
-        const changeColor = () => {
-            let lightness = Math.floor(Math.random() * 90);
-            if (lightness < 30) { lightness += 30; }
-            document.querySelector(":root").style.setProperty("--gridBG", `hsla(155, 85%, ${lightness}%, 0.4)`); 
-        };
-
-        document.addEventListener("mousemove", (e) => {
-            if (e.clientX % squareWidth === 0) {
-                changeColor();
-            }
-            if (e.clientY % squareWidth === 0) {
-                changeColor();
-            }
-        })
     </script>
 </body>
 </html>
