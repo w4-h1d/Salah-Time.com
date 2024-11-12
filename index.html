@@ -125,13 +125,10 @@
                 let cards = document.querySelectorAll(".square");
                     setInterval(() => {
                         const randomCard = Math.floor(Math.random() * cards.length);
-                        const hue = Math.floor(Math.random() * 360);
-                        const bg = getComputedStyle(cards[randomCard]).backgroundColor;
-        
                         cards[randomCard].style.backgroundColor = `hsla(155, 100%, 29%, 0.85)`;
         
                         setTimeout(() => {
-                            cards[randomCard].style.backgroundColor = bg;
+                            cards[randomCard].style.backgroundColor = "#0c2e1e";
                         }, 1500)
                     }, 300)
                 }
@@ -146,19 +143,14 @@
                 })
         
                 const changeColor = () => {
-                    let lightness = Math.floor(Math.random() * 90);
-                    if (lightness < 30) { lightness += 30; }
-                    document.querySelector(":root").style.setProperty("--gridBG", `hsla(155, 85%, ${lightness}%, 0.4)`); 
+                    if (e.clientX % squareWidth === 0 || e.clientY % squareWidth === 0) {
+                        let lightness = Math.floor(Math.random() * 90);
+                        if (lightness < 30) { lightness += 30; }
+                        document.querySelector(":root").style.setProperty("--gridBG", `hsla(155, 85%, ${lightness}%, 0.4)`); 
+                    }
                 };
         
-                document.addEventListener("mousemove", (e) => {
-                    if (e.clientX % squareWidth === 0) {
-                        changeColor();
-                    }
-                    if (e.clientY % squareWidth === 0) {
-                        changeColor();
-                    }
-                })
+                document.querySelector("#container").addEventListener("mousemove", (e) => changeColor());
             </script>
             
             <article class="flex-center-row downloads relative">
@@ -264,7 +256,6 @@
     <footer class="footer flex-center-column">
         <p><span class="nowrap">&copy; 2024 Najmul Huda Wahid.</span> <span class="nowrap">All Rights Reserved.</span></p>
     </footer>
-
     <script>
         const iframe = document.getElementById("widgetIframe");
                 
@@ -280,7 +271,6 @@
         document.getElementById("menuBtn").addEventListener("click", () => toggleMenu());
 
         document.getElementById("menu").addEventListener("focusout", () => toggleMenu());
-
     </script>
 </body>
 </html>
