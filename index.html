@@ -3,21 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salah Time - The Prayer Times Browser Extension</title>
+    <meta name="description" content="Salah Time is a browser extension that provides accurate daily Muslim prayer times based on your location. Customize settings for location, timing, and calculation methods. Perfect for staying connected to your faith. No user data collected.">
     <meta name="keywords" content="Salah, Salah Time, Salat, Salat Time, Muslim Prayer Time, Prayer, Pray, Prayer Time, Namaz, Namaz Time, Najmul Huda, Najmul, Najmul Huda Wahid">
-    <meta name="description" content="The Official Website of Salah Time Browser Extension">
     <meta name="author" content="Najmul Huda Wahid">
-    <title>Salah Time - The Prayer Time Browser Extension</title>
+    
     <link rel="canonical" href="https://salah-time.com">
+
+    <meta property="og:title" content="Salah Time - The Prayer Times Browser Extension">
+    <meta property="og:description" content="Get daily Muslim prayer times with the Salah Time browser extension. Location-based accuracy, customizable options, and complete privacy.">
+    <meta property="og:url" content="https://salah-time.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://salah-time.com/images/Salah-Time-Logo.svg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Salah Time - Accurate Muslim Prayer Times Extension">
+    <meta name="twitter:description" content="Stay connected to your faith with Salah Time, a browser extension for accurate Muslim prayer times. Customizable settings and privacy guaranteed.">
+    <meta name="twitter:image" content="https://salah-time.com/images/Salah-Time-Logo.svg">
+    
+
     <link rel="preload" href="/images/Salah-Time-Logo.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="/images/hero-v2.webp" as="image" type="image/svg+xml">
     <link rel="preload" href="/font/roboto-regular-webfont.woff2" crossorigin="anonymous" as="font" type="font/woff2">
     <link rel="preload" href="/font/roboto-regular-webfont.woff" crossorigin="anonymous" as="font" type="font/woff">
-    <link rel="preload" href="style-mini.css" as="style">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <link rel="preload" href="/style-mini.css" as="style">
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
     <script>
         localStorage.setItem("scale", 1);
     </script>
-    <link rel="stylesheet" href="style-mini.css">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Salah Time",
+            "url": "https://salah-time.com",
+            "description": "Browser extension providing accurate Muslim prayer times based on your location.",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "Web",
+            "author": {
+                "@type": "Person",
+                "name": "Najmul Huda Wahid"
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="/style-mini.css">
     <style>
         /*-----------Background Grid Effect-------------*/
         :root {
@@ -61,6 +93,9 @@
             z-index: 1;
             pointer-events: none;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -93,6 +128,7 @@
             </article>
             
             <article class="flex-center-column">
+                <h2 class="hidden">Extension Preview</h2>
                 <img src="images/hero-v2.webp" alt="main" class="hero" width="800" height="668" loading="eager">
 
                 <p class="hero-text">Salah Time is a browser extension which shows the daily Muslim Prayer local time based on the location. It is highly configurable allowing User to set/change location automatically or manually. And it also allows the user to fine-tune/offset prayer times and set prayer time calculation method. <i>Salah Time does not collect any user data.</i></p>   
@@ -155,6 +191,7 @@
             </script>
             
             <article class="flex-center-row downloads relative">
+                <h2 class="hidden">Download Buttons</h2>
                 <div class="marker" id="downloads"></div>
                 <a href="https://chromewebstore.google.com/detail/salah-time/fdcdplphhahmakbgjefenejojakpcnnd" target="_blank"><img src="images/Install-on-Chrome.svg" alt="Install on Chrome" width="255" height="48" loading="lazy" class="install_btn"></a>
                 <a href="https://addons.mozilla.org/en-US/firefox/addon/salah-time/" target="_blank"><img src="images/Install-on-Firefox.svg" alt="Install on Firefox" width="255" height="48" loading="lazy" class="install_btn"></a>
@@ -184,21 +221,25 @@
             <h2>Features</h2>
 
             <article class="card">
+                <h3 class="hidden">Change Theme</h3>
                 <img src="images/theme.webp" alt="App Theme Preview" width="600" height="566" loading="lazy" class="card__img">
                 <p class="card__p">Light & Dark mode to suit user preferences</p>
             </article>
 
             <article class="card reverse">
+                <h3 class="hidden">Location</h3>
                 <img src="images/location.webp" alt="Setting Location Preview" width="600" height="477" loading="lazy" class="card__img">
                 <p class="card__p">Set / Change Location Automatically (<span class="highlight">Requires Internet Connection!</span>)</p>
             </article>
 
             <article class="card">
+                <h3 class="hidden">Tuning</h3>
                 <img src="images/tune.webp" alt="Setting Timing Offsets Preview" width="600" height="886" loading="lazy" class="card__img">
                 <p class="card__p">Tune / Offset prayer time in minutes</p>
             </article>
 
             <article class="card reverse">
+                <h3 class="hidden">Zoom</h3>
                 <img src="images/app-scale.webp" alt="Setting App Scale Preview" width="600" height="451" loading="lazy" class="card__img">
                 <p class="card__p">Change Extension Scale (Zoom Level).</p>
             </article>     
