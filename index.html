@@ -20,7 +20,7 @@
     <style>
         /*-----------Background Grid Effect-------------*/
         :root {
-            --gridBG: hsla(155, 85%, 55%, 0.4);
+            --gridBG: hsla(155, 100%, 50%, 0.4);
         }
         .hero-bg {
             overflow-x: clip;
@@ -142,7 +142,7 @@
                     randomAnimation();
                 })
         
-                const changeColor = () => {
+                /* const changeColor = (e) => {
                     if (e.clientX % squareWidth === 0 || e.clientY % squareWidth === 0) {
                         let lightness = Math.floor(Math.random() * 90);
                         if (lightness < 30) { lightness += 30; }
@@ -150,7 +150,7 @@
                     }
                 };
         
-                document.querySelector("#container").addEventListener("mousemove", (e) => changeColor());
+                document.querySelector("#container").addEventListener("mousemove", (e) => changeColor(e)); */
             </script>
             
             <article class="flex-center-row downloads relative">
