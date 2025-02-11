@@ -727,6 +727,7 @@ h2 {
     .aboutMe__div {
         gap: 2em;
         flex-wrap: nowrap;
+
     }
     
     .myPhoto {
@@ -905,7 +906,7 @@ h2 {
         flex-flow: row wrap;
         justify-content: flex-end;
         align-items: flex-end;
-        margin-right: 1em;
+        margin-right: 4em;
     }
 
     .menu__ul li {
@@ -943,17 +944,20 @@ h2 {
     }
 
     .hero-text {
-        margin: -1em 2em 1em;
+        margin: -1em 5em 1em;
         border-radius: min(2vw, 1.5vh);
+
     }
     
     .downloadBtn {
         padding: 0.25em 1.5em;
+        
     }
   
     .downloads {
         gap: 2em;
         margin: 2vh 0 7.5vh;
+        padding-inline: 4em;
     }
 
     .install_btn {
@@ -966,7 +970,7 @@ h2 {
     /*/////////////////////////////////////////////////////////////////////////*/
     /*//////////////////////////// ALADHAN API ////////////////////////////////*/
     .api {
-        padding: 1em 2em 3em;
+        padding: 1em 5em 3em;
     }
 
     .api p {
@@ -978,6 +982,14 @@ h2 {
     /*///////////////////////////////// ABOUT ME //////////////////////////////*/
     .myIntro {
         font-size: 4rem;
+    }
+
+    .aboutMe__div {
+        gap: 4em;
+    }
+
+    .myPhoto {
+        width: 25vw;
     }
 
     /*/////////////////////////////////////////////////////////////////////////*/
