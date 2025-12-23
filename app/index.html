@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style-mini.css">
     <link rel="stylesheet" id="theme">
 </head>
-<body>
+<body id="body">
     <section class="">
         <div class="settings-icon-div">
             <button class="settings-button filter-black" id="settings-btn"><img src="images/settings-icon.svg" alt="settings icon" width="16" height="16"></button>
@@ -45,6 +45,7 @@
                     <label for="zoom">Zoom:</label>
                     <select id="zoom">
                         <option disabled selected>Scale</option>
+                        <option value="fullscreen">Full Screen</option>
                         <option value="1">100%</option>
                         <option value="1.25">125%</option>
                         <option value="1.5">150%</option>
@@ -54,6 +55,7 @@
                         <option value="3">300%</option>
                         <option value="3.5">350%</option>
                         <option value="4">400%</option>
+                        
                     </select>
                     <button id="setZoom">Set</button>
                 </form>
@@ -178,5 +180,28 @@
             </div>
         </div>
     </section>
+    <script>
+        const dynamicScale = () => {
+            const windowAspectRatio = body.offsetWidth / body.offsetHeight;
+            const appAspectRatio = 230 / 349.5; // Constant Value
+            if (windowAspectRatio > appAspectRatio) {
+                document.querySelector(":root").style.setProperty("--scale", body.offsetHeight / 349.5);
+            } else {
+                document.querySelector(":root").style.setProperty("--scale", body.offsetWidth / 230);
+            }
+        };
+
+        dynamicScale();
+
+        window.addEventListener("resize", dynamicScale);
+
+        const fullscreen = () => {
+            const scale = document.querySelector("#zoom").value;
+
+            if (scale === "fullscreen") {
+                dynamicScale();
+            }
+        };
+    </script>
 </body>
 </html>

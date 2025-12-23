@@ -35,6 +35,17 @@ html {
     font-size: calc(1rem * var(--scale));
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--accent-1);
+    transition: background-color 0.2s;
+    overflow: hidden;
+}
+
 button img {
     width: calc(16px * var(--scale));
     height: calc(16px * var(--scale));
@@ -61,7 +72,7 @@ section {
     position: relative;
     transition: all 0.2s;
     overflow: hidden;
-
+    outline: 1px solid;
     height: auto;
 }
 
